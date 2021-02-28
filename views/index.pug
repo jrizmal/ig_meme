@@ -1,0 +1,14 @@
+html
+  head
+    title= title
+    style 
+        include ./style.css
+  body 
+    each image in images
+        div.image-container
+            form.meme-form(action="/rate", method="post")
+                input(type="hidden", name="image_url", value=image.file)
+                img(src=image.file)
+                button Post
+    script
+        include ./script.js
